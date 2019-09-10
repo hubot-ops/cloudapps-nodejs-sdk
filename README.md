@@ -1,5 +1,5 @@
 # CloudApps NodeJS SDK
-The Cloudprinter.com NodeJS SDK is a package with useful features that enable App developers to easily integrate their application with Cloudprinter.com and make requests to our CloudApps API. This PHP SDK makes it easy to set up the integration between your App and the Cloudprinter.com Print Cloud to request instant pricing, post print orders, get production signals back, and more. 
+The Cloudprinter.com NodeJS SDK is a package with useful features that enable App developers to easily integrate their application with Cloudprinter.com and make requests to our CloudApps API. This NodeJs SDK makes it easy to set up the integration between your App and the Cloudprinter.com Print Cloud to request instant pricing, post print orders, get production signals back, and more. 
 
 The CloudApps API is exclusively designed for app developers.
 
