@@ -41,7 +41,7 @@ export class OAuth2 {
             grant_type: 'authorization_code'
         };
 
-        return httpClient.makePostRequest(this.baseUrl + 'oauth2/token', data)
+        return httpClient.makePostRequest('oauth2/token', data)
     }
 
     /**

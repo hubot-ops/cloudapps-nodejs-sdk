@@ -15,8 +15,6 @@ export class HttpClient {
             headers: this.headers
         };
 
-        console.log(this.baseUrl + uri);
-
         return axios.post(this.baseUrl + uri, data, options)
             .then(function (response) {
                 return Promise.resolve(response.data);
