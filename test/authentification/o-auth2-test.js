@@ -10,7 +10,9 @@ describe('OAuth2 test', function() {
                 redirect_uri: 'http://www.your-site.com',
                 scope: 'read-write'
             };
-            chai.expect(() => new CloudApps.OAuth2(config)).to.throw('"client_id" is required');
+
+            const oAuth2 = new CloudApps.OAuth2(config);
+            chai.expect(() => oAuth2.getAuthorizationCodeUrl()).to.throw('"client_id" is required');
         });
 
         it('Config is not valid. Redirect uri is missing', function () {
@@ -19,7 +21,8 @@ describe('OAuth2 test', function() {
                 client_secret: '345',
                 scope: 'read-write'
             };
-            chai.expect(() => new CloudApps.OAuth2(config)).to.throw('"redirect_uri" is required');
+            const oAuth2 = new CloudApps.OAuth2(config);
+            chai.expect(() => oAuth2.getAuthorizationCodeUrl()).to.throw('"redirect_uri" is required');
         });
     });
 
@@ -33,7 +36,7 @@ describe('OAuth2 test', function() {
             };
 
             const oAuth2 = new CloudApps.OAuth2(config);
-            const expected = 'https://api.cloudprinter.com/cloudauth/1.0//oauth2/authorize?client_id=123&redirect_uri=http://www.your-site.com&scope=read-write&response_type=code&state=%22%22';
+            const expected = 'https://api.cloudprinter.com/cloudauth/1.0/oauth2/authorize?client_id=123&redirect_uri=http://www.your-site.com&scope=read-write&response_type=code&state=%22%22';
             const authorizationCodeUrl = oAuth2.getAuthorizationCodeUrl(config);
             assert.equal(authorizationCodeUrl, expected)
         });
