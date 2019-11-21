@@ -17,4 +17,12 @@ describe('Shipping action', function() {
             chai.expect(response.shipping_countries).to.be.a('array');
         });
     });
+
+    describe('List of states.', function () {
+        it('Should return list of shipping states', async function () {
+            const countryReference = 'US';
+            const response = await client.shipping.getStates(countryReference);
+            chai.expect(response.shipping_states).to.be.a('array');
+        });
+    });
 });
