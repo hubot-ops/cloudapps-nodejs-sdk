@@ -9,6 +9,8 @@ Our platform makes use of smart routing algoritms to route any print job to the 
 
 Visit our [website](https://www.cloudprinter.com) for more information on all the products and services that we offer.
 
+Follow the [link](https://github.com/cloudprintercom/cloudapps-nodejs-sdk/wiki/NodeJS-SDK-CloudAPPS-documentation) to read the full documentation.
+
 ## Installation 
 The CloudApps SDK package can be installed with npm. Run this command:
 ```
@@ -147,3 +149,6 @@ cloudAppsClient.order.create(data)
         console.log(error);
     });
 ```
+
+## Full documentation
+Follow the [link](https://github.com/cloudprintercom/cloudapps-nodejs-sdk/wiki/NodeJS-SDK-CloudAPPS-documentation) to read the full documentation.
