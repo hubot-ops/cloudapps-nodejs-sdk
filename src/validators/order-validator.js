@@ -31,7 +31,11 @@ export class OrderValidator extends Validator {
                 reference: Joi.string().required(),
                 product_reference: Joi.string().required(),
                 count: Joi.number().min(1).required(),
-                quote: Joi.string().required(),
+                quote: Joi.string()
+                    .when('reorderOrderReference', {
+                        is: Joi.exist(),
+                        otherwise: Joi.required()
+                    }),
                 files: Joi.array().items(Joi.object({
                     type: Joi.string().required(),
                     url: Joi.string().uri().required(),
